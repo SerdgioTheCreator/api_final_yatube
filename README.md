@@ -1,3 +1,8 @@
+## YATUBE_API
+
+API (Application Programming Interface) - программный интерфейс
+для взаимодействия одной компьютерной программы с другими.
+
 ### Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
@@ -40,4 +45,57 @@ python3 manage.py migrate
 
 ```
 python3 manage.py runserver
+```
+
+### Пример запросов:
+
+Создание публикации:
+
+```
+http://127.0.0.1:8000/api/v1/posts/
+```
+
+```json
+{
+"text": "string",
+"image": "string",
+"group": 0
+}
+```
+
+Добавление комментария:
+
+```
+http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
+```
+
+```json
+{
+  "text": "string"
+}
+```
+
+Подписка:
+
+```
+http://127.0.0.1:8000/api/v1/follow/
+```
+
+```json
+{
+  "following": "string"
+}
+```
+
+Получить JWT-токен:
+
+```
+http://127.0.0.1:8000/api/v1/jwt/create/
+```
+
+```json
+{
+  "username": "string",
+  "password": "string"
+}
 ```
